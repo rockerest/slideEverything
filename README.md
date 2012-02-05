@@ -5,11 +5,11 @@ I wanted a slider that would do everything, and give the user the power to contr
 
 Roadmap
 =======
-Directional Sliding
-	-right
-	-down
-	-up
-	
+Directional Sliding  
+	-right  
+	-down  
+	-up  
+  
 UI for manual control
 
 
