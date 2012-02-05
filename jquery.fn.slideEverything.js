@@ -85,8 +85,7 @@
 			{
 				return this.each(function() {
 					var	$this = $(this),
-						data = $this.data('slideEverything')/*,
-						wrapper = $('#' + data.pre + 'wrapper')*/;
+						data = $this.data('slideEverything');
 						
 					$this.data(
 						'slideEverything',
@@ -112,7 +111,7 @@
 				return this.each(function() {
 					var	$this = $(this),
 						data = $this.data('slideEverything'),
-						wrapper = $('#' + data.pre + 'wrapper'),
+						wrapper = $this.children('#' + data.pre + 'wrapper'),
 						current = wrapper.children('div[data-current="current"]'),
 						obj = current.next();
 					
