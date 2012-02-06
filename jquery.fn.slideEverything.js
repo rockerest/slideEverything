@@ -20,10 +20,10 @@
 							'pre' : 'SE_',
 							
 							'direction' : 'next',
+							
 							'delay' : 3500,
 							'easing' : 'swing',
-							'timing' : 1000,
-							'type' : 'slideshow',
+							'timing' : 1000,							
 							'animation' : 'push'
 							}
 						);
@@ -74,6 +74,9 @@
 					
 					//drop the slide wrapper inside the slider
 					$this.append(wrapper);
+					
+					//display all the slides in case they were hidden, probably to avoid FOUC
+					wrapper.children().children().show();
 					
 					if( !data.defer )
 					{
