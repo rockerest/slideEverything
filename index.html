@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A Page.  Herp.</title>
+		<style>
+			.code{
+				background-color: #555555;
+				color: #FFFFFF;
+				
+				width: 90%;
+				
+				margin: auto;				
+				padding: 1em;
+				
+				overflow: scroll;
+				white-space: nowrap;
+			}
+			
+			span.default{
+				background-color: #888888;
+				padding: .5em;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content" style="width: 960px; height: 100%; margin: auto;">
+			<p>Welcome to the demo & documentation page for <a href="http://www.github.com/rockerest/slideEverything/master">slideEverything</a>.  I'm excited you're here!</p>
+			<p>I don't want to waste your time, so let's get right into it!</p>
+			<hr />
+			<h2>The HTML</h2>
+			<p>The HTML that this plugin requires is very simple.  First, you need to define a window that the slider will inhabit.</p>
+			<div class="code">
+				<code>
+					&lt;div id="slider-a" style="width: 800px; height: 500px;">
+					<br />
+					&lt;/div>
+				</code>
+			</div>
+			<p>Then, drop everything you want inside that slider.  Keep in mind that each element that is a direct descendant of the outer slider will be considered a slide, so keep things well grouped!</p>
+			<p>Make sure you explicitly define the width and height of your slider.  The plugin relies on a defined size to create the slides, so it's behavior could be erratic if you don't.</p>
+			<div class="code">
+				<code>
+					&lt;div id="slider-a" style="width: 800px; height: 500px;">
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String in a Slide&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String in the same Slide&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;img alt="An Image" src="http://neilvn.com/tangents/images/software/neatimage/neat-image-off-lrg.jpg" />
+					<br />
+					&lt;/div>
+				</code>
+			</div>
+			<hr />
+			<h2>The Javascript</h2>
+			<p>First of all, you need to use jQuery.  After all, this is a jQuery Plugin.</p>
+			<div class="code">
+				<code>
+					&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">&lt;/script>
+				</code>
+			</div>
+			<p>Once you've got jQuery loaded up, pull in the plugin.</p>
+			<div class="code">
+				<code>
+					&lt;script type="text/javascript" src="jquery.fn.slideEverything.js">&lt;/script>
+				</code>
+			</div>
+			<p>Finally, you're going to need to do a little jQuery coding yourself.  Pop open a new .js file (I named mine index.js to make things easy), and try this code for starters.</p>
+			<div class="code">
+				<code>
+					$(function()
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;{
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#slider-a').slideEverything();
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br />
+					);
+				</code>
+			</div>
+			<p>Once you've got your custom javascript, you'll need to include it in your page, so drop a third script tag in there after the plugin.</p>
+			<div class="code">
+				<code>
+					&lt;script type="text/javascript" src="index.js">&lt;/script>
+				</code>
+			</div>
+			<hr />
+			<h2>The Demo</h2>
+			<p>If you've followed the directions ever so carefully, your page should look like this (I didn't walk you through the basics, so I hope you put stuff like <strong>&lt;html></strong> in there):</p>
+			<div class="code">
+				<code>
+					&lt;!DOCTYPE html>
+					<br />
+					&lt;html>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;head>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>slideEverything Demo&lt;/title>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;body>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="slider-a" style="width: 800px; height: 500px;">
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String in a Slide&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>A String in the same Slide&lt;/p>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img alt="An Image" src="http://neilvn.com/tangents/images/software/neatimage/neat-image-off-lrg.jpg" />
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">&lt;/script>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="jquery.fn.slideEverything.js">&lt;/script>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="index.js">&lt;/script>
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body>
+					<br />
+					&lt;/html>
+				</code>
+			</div>
+			<p>If you load that page up in a browser, it should look pretty close to what you see below this line.</p>
+			<hr />
+			<div id="slider-a" style="width: 800px; height: 500px;">
+				<p>A String</p>
+				<div>
+					<p>A String in a Slide</p>
+					<p>A String in the same Slide</p>
+				</div>
+				<img alt="An Image" src="http://neilvn.com/tangents/images/software/neatimage/neat-image-off-lrg.jpg" />
+			</div>
+			<hr />
+			<h2>Advanced Options</h2>
+			<p>The goal of this plugin is to give a ton of control of the slider - in a simple way - to the user, whether that user is the web developer, or the intended target using the web site.</p>
+			<p>This plugin is in it's absolute infancy, so much of that functionality isn't yet present, but you have a bunch of control over how it currently works.</p>
+			<hr />
+			<h3>Methods:</h3>
+			<p><em>$().slideEverything('init');</em> is identical to calling <em>$().slideEverything();</em>.</p>
+			<p><em>$().slideEverything('start');</em> will start the slideshow automatically playing.</p>
+			<p><em>$().slideEverything('stop');</em> will stop the slideshow if it is automatically sliding.</p>
+			<p><em>$().slideEverything('move');</em> will progress the slider/slideshow to the next queued slide.
+			<br />The next queued slide is determined by the options object (more on that later).</p>
+			<p><em>$().slideEverything('update', options);</em> will load a new set of options into the slider (more on the options object later).</p>
+			<p><em>$().slideEverything('destroy');</em> will completely remove the slider/slideshow from memory.  It should stop running <strong>AND EXISTING</strong>.</p>
+			<p><em>$().slideEverything('debug');</em> will dump the options object (more on the options object later) to the console.</p>
+			<hr />
+			<p>To control how the plugin works, you can initialize it (<em>$().slideEverything(options);</em>) or change it's operation on the fly (<em>$().slideEverything('update', options);</em>) using an options object.</p>
+			<p>The object is normal JSON and looks just like any other jQuery object.</p>
+			<p>Not a lot is exposed right now, since the plugin doesn't currently implement many of it's goals, but the options listed below are available for use.</p>
+			<h3>Options:</h3>
+			
+			<p><em>{"pre" : "<strong>[string]</strong>"}</em> is the prepended string for inserted DOM elements.
+			<br />Unless you are encountering namespacing overlap, you should probably leave this one alone.
+			<br /><span class="default">default: <strong>"SE_"</strong></span></p>
+			
+			<p><em>{"defer" : <strong>[true|false]</strong>}</em> determines whether the slider should automatically begin playing.
+			<br />Remember that the property is <em>defer</em>, so <strong>false</strong> begins the slideshow automatically, while <strong>true</strong> does not start automatically.
+			<br /><span class="default">default: <strong>false</strong></span></p>
+			
+			<p><em>{"delay" : <strong>[number]</strong>}</em> determines the time in milliseconds before a new slide is brought in automatically.
+			<br />Only takes effect if <em>"defer" : false</em>.
+			<br /><span class="default">default: <strong>3500</strong></span></p>
+			
+			<p><em>{"easing" : "<strong>[linear|swing]</strong>"}</em> determines the method that the new slide will enter the viewer.
+			<br />The only options available by default in the jQuery library are "linear" and "swing."
+			<br /><span class="default">default: <strong>"swing"</strong></span></p>
+			
+			<p><em>{"timing" : <strong>[number]</strong>}</em> determines the time in milliseconds that it takes a new slide to complete it's animation.
+			<br /><span class="default">default: <strong>1000</strong></span></p>
+			
+			<p><em>{"animation" : "<strong>[push|over]</strong>"}</em> determines which slide animation to use.
+			<br />Current options are "push" - which pushes the old slide out at the same rate the new slide comes in - and "over" - which slides the new slide in over the old one.
+			<br /><span class="default">default: <strong>"push"</strong></span></p>
+			<hr />
+			<h2>Advanced Demo</h2>
+			<p>Using the advanced options, we change the operation of the slideshow we created above.</p>
+			<p>Open up your custom jQuery file that you wrote earlier, and change it to look like this:</p>
+			<div class="code">
+				<code>
+					$(function()
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;{
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#slider-a').slideEverything(
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"animation" : "over",
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"easing" : "linear"
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+					<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br />
+					);
+				</code>
+			</div>
+			<p>If you reload your page, it should look pretty close to what you see below this line.</p>
+			<hr />
+			<div id="slider-b" style="width: 800px; height: 500px;">
+				<p>A String</p>
+				<div>
+					<p>A String in a Slide</p>
+					<p>A String in the same Slide</p>
+				</div>
+				<img alt="An Image" src="http://neilvn.com/tangents/images/software/neatimage/neat-image-off-lrg.jpg" />
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.fn.slideEverything.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
